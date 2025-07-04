@@ -1,1 +1,628 @@
+/* General Styling */
+:root {
+    --primary-color: #388e3c; /* Darker Green */
+    --secondary-color: #66bb6a; /* Lighter Green */
+    --accent-color: #fdd835; /* Yellow/Orange for buttons/highlights */
+    --text-dark: #333;
+    --text-light: #f4f4f4;
+    --bg-light: #f8f8f8;
+    --bg-dark: #2c3e50; /* Dark blue/grey for footer */
+    --light-grey: #e0e0e0;
+}
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: #fdfdfd; /* A very light off-white */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-description {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    background-color: #2e7d32; /* Slightly darker green */
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--accent-color);
+    color: var(--text-dark);
+}
+
+.btn-secondary:hover {
+    background-color: #fbc02d; /* Slightly darker yellow */
+    transform: translateY(-2px);
+}
+
+/* Header & Navigation */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('C:/Users/WDT/Desktop/Landing Page/assets/solar-panels-meadow 1.png') no-repeat center center/cover;
+    color: var(--text-light);
+    height: 70vh; /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding-top: 100px; /* Space for fixed nav if needed */
+}
+
+.hero-section nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent background for nav */
+    z-index: 1000;
+}
+
+.hero-section .logo a {
+    color: var(--text-light);
+    font-size: 1.8em;
+    font-weight: 700;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hero-section .nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.hero-section .nav-links li {
+    margin-left: 30px;
+}
+
+.hero-section .nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.hero-section .nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.hero-content {
+    margin-top: -50px; /* Adjust if nav is fixed */
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.1;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+}
+
+/* Burger Menu (Hidden on Desktop) */
+.burger-menu {
+    display: none; /* Hide by default */
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.burger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-light);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* About Us Section */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+.about-text ul {
+    list-style: none;
+}
+
+.about-text ul li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.about-text ul li i { /* Placeholder for icon if you use FontAwesome/similar */
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Services Section */
+.green-bg {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+}
+
+.green-bg h2, .green-bg .section-description {
+    color: var(--text-light);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-item {
+    background-color: var(--text-light);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    color: var(--text-dark); /* Ensure text is dark on light background */
+}
+
+.service-item img {
+    max-width: 100%; /* Make images fit */
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Crop if necessary */
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+/* Solar Kits Section - Similar to services */
+.solar-kit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.kit-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.kit-item img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.kit-item h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+/* Repairs/Replacement Section */
+.bg-image-fixed {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/Home-1.png') no-repeat center center fixed; /* Use an image that suggests repair/tech */
+    background-size: cover;
+    color: var(--text-light);
+    text-align: center;
+    padding: 100px 0;
+}
+
+.content-overlay h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.content-overlay p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Energy Innovations / Why Us Section */
+.light-bg {
+    background-color: var(--bg-light);
+}
+
+.innovation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.innovation-item {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+    text-align: left;
+}
+
+.innovation-item h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.innovation-item i { /* Placeholder for icons */
+    font-size: 1.5em;
+    margin-right: 10px;
+    color: var(--primary-color);
+    vertical-align: middle;
+}
+
+/* Our Values Section */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.value-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.value-item h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.value-item i {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    display: block; /* Ensures icon is on its own line */
+}
+
+/* Testimonials Section */
+.testimonial-carousel {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.testimonial-item {
+    background-color: var(--text-light);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 450px;
+    text-align: center;
+    color: var(--text-dark);
+}
+
+.testimonial-item .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--primary-color);
+}
+
+.testimonial-item .quote {
+    font-size: 1.1em;
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.testimonial-item .customer-name {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Contact Form Section */
+.dark-bg {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.dark-bg h2 {
+    color: var(--text-light);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 40px auto 0;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border: 1px solid var(--light-grey);
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #fff;
+    color: var(--text-dark);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    width: fit-content;
+    align-self: center;
+}
+
+/* Footer */
+footer {
+    background-color: #222; /* Even darker for footer background */
+    color: #bbb;
+    padding: 50px 0 20px;
+    font-size: 0.9em;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #444;
+}
+
+.footer-col h3 {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--primary-color);
+}
+
+.social-icons a {
+    color: var(--text-light);
+    font-size: 1.5em;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    color: #888;
+}
+
+
+
+/* 3. Responsiveness (Media Queries) */
+
+/* Mobile navigation */
+@media (max-width: 768px) {
+    .hero-section nav {
+        padding: 20px;
+    }
+
+    .hero-section .nav-links {
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        background-color: var(--bg-dark);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+        transform: translateX(100%); /* Hide off-screen */
+        transition: transform 0.5s ease-in;
+        padding-top: 80px;
+        z-index: 999;
+    }
+
+    .hero-section .nav-links.nav-active {
+        transform: translateX(0%); /* Slide in */
+    }
+
+    .hero-section .nav-links li {
+        opacity: 0; /* Hide initially */
+        margin: 20px 0;
+    }
+
+    .hero-section .nav-links li a {
+        color: var(--text-light);
+        font-size: 1.2em;
+    }
+
+    /* Animation for nav links */
+    .hero-section .nav-links.nav-active li {
+        opacity: 1;
+        transition: opacity 0.5s ease-in forwards;
+    }
+    .hero-section .nav-links.nav-active li:nth-child(1) { transition-delay: 0.1s; }
+    .hero-section .nav-links.nav-active li:nth-child(2) { transition-delay: 0.2s; }
+    .hero-section .nav-links.nav-active li:nth-child(3) { transition-delay: 0.3s; }
+    .hero-section .nav-links.nav-active li:nth-child(4) { transition-delay: 0.4s; }
+    .hero-section .nav-links.nav-active li:nth-child(5) { transition-delay: 0.5s; }
+    .hero-section .nav-links.nav-active li:nth-child(6) { transition-delay: 0.6s; }
+
+
+    .burger-menu {
+        display: block; /* Show burger icon */
+    }
+
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2 {
+        opacity: 0;
+    }
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
+    .about-grid,
+    .service-grid,
+    .solar-kit-grid,
+    .innovation-grid,
+    .values-grid,
+    .footer-grid {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    }
+
+    .about-image {
+        order: -1; /* Move image above text on mobile */
+        margin-bottom: 30px;
+    }
+
+    .section-padding {
+        padding: 50px 0;
+    }
+
+    .service-item img,
+    .kit-item img {
+        height: 180px; /* Adjust image height for smaller screens */
+    }
+
+    .testimonial-item {
+        max-width: 90%; /* Allow testimonials to take more width */
+    }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 3em;
+    }
+
+    .hero-content p {
+        font-size: 1.3em;
+    }
+
+    .about-grid {
+        gap: 30px;
+    }
+
+    .service-grid,
+    .solar-kit-grid,
+    .innovation-grid,
+    .values-grid,
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for some grids */
+    }
+
+    .testimonial-item {
+        max-width: 400px;
+    }
+}
